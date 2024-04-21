@@ -44,6 +44,7 @@ export function CalendarStep({ onSelectDateTime }: CalendarStepProps) {
       const response = await api.get(`/users/${username}/availability`, {
         params: {
           date: selectedDayWithoutTime,
+          timezoneOffset: selectedDate ? selectedDate.getTimezoneOffset() : 0,
         },
       })
 
